@@ -1,24 +1,24 @@
 //initialize the variables
 let SongIndex = 1;
-let audioElement = new Audio('song/song1.mp3');
+let audioElement = new Audio('song1.mp3');
 let MasterPlay = document.getElementById("masterPlay");
 let myProgressBar = document.getElementById('BottomProgressBar');
 let gif = document.getElementById('Bgif');
 let SongItems = Array.from(document.getElementsByClassName('items'))
 let MasterSongName = document.getElementById('MasterSongName')
 let Songs = [
-    {SongName: "Punjabiyan Di Dhee", FilePath:"Song/song1.mp3", CoverPath: "Cover/cover1.jpg", SingerName:"Singer: Guru Randhawa"},
-    {SongName: "Mast Nazro Se",      FilePath:"Song/song2.mp3", CoverPath: "Cover/cover2.jpg", SingerName:"Singer: Jubin Nautiyal "},
-    {SongName: "Tu Hi Das De",       FilePath:"Song/song3.mp3", CoverPath: "Cover/cover3.jpg", SingerName:"Singer: Simar and Mickey Singh"},
-    {SongName: "Har Har Sambhu",     FilePath:"Song/song4.mp3", CoverPath: "Cover/cover4.jfif", SingerName:"Singer: Jeetu and Abhilipsa"},
-    {SongName: "Harleys In Hawai",   FilePath:"Song/song5.mp3", CoverPath: "Cover/cover5.jpg", SingerName:"Singer : Katy Pery"},
-    {SongName: "Closer",             FilePath:"Song/song6.mp3", CoverPath: "Cover/cover6.jpg", SingerName:"Singer : The Chainsmokers"},
-    {SongName: "Mann Mera",          FilePath:"Song/song7.mp3", CoverPath: "Cover/cover7.jpg", SingerName:"Singer : Jalraj"},
-    {SongName: "To Fir Aao ",        FilePath:"Song/song8.mp3", CoverPath: "Cover/cover8.jpg", SingerName:"Singer : Jalraj"},
-    {SongName: "Gale Lag Ja",        FilePath:"Song/song9.mp3", CoverPath: "Cover/cover9.jpg", SingerName:"Singer : Jalraj"},
-    {SongName: "Saajna X Aadat",     FilePath:"Song/song10.mp3", CoverPath: "Cover/cover10.jpg", SingerName:"Singer : Jalraj"},
-    {SongName: "Uska Hi Bana",       FilePath:"Song/song11.mp3", CoverPath: "Cover/cover11.jpg", SingerName:"Singer : Jalraj"},
-    {SongName: "Zara Zara",          FilePath:"Song/song12.mp3", CoverPath: "Cover/cover12.jpg", SingerName:"Singer : Jalraj"},
+    {SongName: "Punjabiyan Di Dhee", FilePath:"song1.mp3", CoverPath: "cover1.jpg", SingerName:"Singer: Guru Randhawa"},
+    {SongName: "Mast Nazro Se",      FilePath:"song2.mp3", CoverPath: "cover2.jpg", SingerName:"Singer: Jubin Nautiyal "},
+    {SongName: "Tu Hi Das De",       FilePath:"song3.mp3", CoverPath: "cover3.jpg", SingerName:"Singer: Simar and Mickey Singh"},
+    {SongName: "Har Har Sambhu",     FilePath:"song4.mp3", CoverPath: "cover4.jfif", SingerName:"Singer: Jeetu and Abhilipsa"},
+    {SongName: "Harleys In Hawai",   FilePath:"song5.mp3", CoverPath: "cover5.jpg", SingerName:"Singer : Katy Pery"},
+    {SongName: "Closer",             FilePath:"song6.mp3", CoverPath: "cover6.jpg", SingerName:"Singer : The Chainsmokers"},
+    {SongName: "Mann Mera",          FilePath:"song7.mp3", CoverPath: "cover7.jpg", SingerName:"Singer : Jalraj"},
+    {SongName: "To Fir Aao ",        FilePath:"song8.mp3", CoverPath: "cover8.jpg", SingerName:"Singer : Jalraj"},
+    {SongName: "Gale Lag Ja",        FilePath:"song9.mp3", CoverPath: "cover9.jpg", SingerName:"Singer : Jalraj"},
+    {SongName: "Saajna X Aadat",     FilePath:"song10.mp3", CoverPath: "cover10.jpg", SingerName:"Singer : Jalraj"},
+    {SongName: "Uska Hi Bana",       FilePath:"song11.mp3", CoverPath: "cover11.jpg", SingerName:"Singer : Jalraj"},
+    {SongName: "Zara Zara",          FilePath:"song12.mp3", CoverPath: "cover12.jpg", SingerName:"Singer : Jalraj"},
 ];
 
 SongItems.forEach((e,i)=>{
@@ -53,13 +53,13 @@ audioElement.addEventListener('timeupdate',()=>{
     myProgressBar.value = progress;
     if(progress==100 && SongIndex<12){
         SongIndex+=1;
-        audioElement.src=`Song/song${SongIndex}.mp3`;
+        audioElement.src=`song${SongIndex}.mp3`;
         MasterSongName.innerText = Songs[SongIndex-1].SongName;
         audioElement.play();
     }
     else if(progress==100 && SongIndex==12){
         SongIndex=1;
-        audioElement.src=`Song/song${SongIndex}.mp3`;
+        audioElement.src=`song${SongIndex}.mp3`;
         MasterSongName.innerText = Songs[SongIndex-1].SongName;
         audioElement.play();
     }
@@ -82,7 +82,7 @@ const PlayCards = ()=>{
         element.addEventListener('click',(e)=>{
             makeAllPlays();
             SongIndex = parseInt(e.target.id);
-            audioElement.src=`Song/song${SongIndex}.mp3`;
+            audioElement.src=`song${SongIndex}.mp3`;
             MasterSongName.innerText = Songs[SongIndex-1].SongName;
             MasterSongName.style.opacity=1;
             audioElement.currentTime=0;
@@ -116,7 +116,7 @@ document.getElementById('next').addEventListener('click',()=>{
     SongIndex=1;
     // else if(SongIndex==0)SongIndex+=2;
     else SongIndex+=1;
-    audioElement.src=`Song/song${SongIndex}.mp3`;
+    audioElement.src=`song${SongIndex}.mp3`;
     audioElement.currentTime=0;
     audioElement.play();
     MasterPlay.classList.remove('fa-play-circle')
@@ -131,7 +131,7 @@ document.getElementById('previous').addEventListener('click',()=>{
     if(SongIndex>1)
     SongIndex-=1;
     else SongIndex=12;
-    audioElement.src=`Song/song${SongIndex}.mp3`;
+    audioElement.src=`song${SongIndex}.mp3`;
     audioElement.currentTime=0;
     audioElement.play();
     MasterPlay.classList.remove('fa-play-circle')
