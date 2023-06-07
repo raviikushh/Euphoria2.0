@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    /* background: linear-gradient(140deg, rgb(2, 197, 2),#04b61c); */
+    background-color:green;
+    font-family: consolas;
+    margin-top: 11vh;
+}
+.BigC{
+    overflow:scroll;
+}
+nav{
+    font-family: 'Ubuntu', sans-serif;
+    overflow: hidden;
+}
+.sticky{
+    top:0;
+    position: fixed;
+    width: 100%;
+}
+.sticky ul li form{
+    position: absolute;
+    right:0;
+    margin-right: 4vw;
+    margin-top: -10px;
+}
+.sticky ul li form input{
+    border-radius:7px;
+    width:10vw;
+    height: 3.5vh;
+}
+nav ul{
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    height: 65px;
+    /* background-color: rgb(0, 121, 0); */
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+nav ul li{
+    padding: 0 12px;
+    cursor: pointer;
+}
+nav ul li:hover{
+    color: red;
+}
+nav ul li button a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 1rem;
+    font-weight: bold;
+}
+nav ul li button{
+    width: 8em;
+    height: 2em;
+    cursor: pointer;
+    border-radius: 7px;
+    background: rgb(69, 231, 20);
+}
+nav ul li button:hover{
+    background: red;
+}
+.Normal{
+    background-color: red;
+}
+.Online{
+    background-color: red;
+}
+.icon img{
+    width: 50px;
+    padding: 0 8px;
+}
+.icon{
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 2rem;
+}
+.img{
+    width: 180px;
+    height: 100px;
+    margin:13px;
+    box-shadow: 2px 2px 5px #41504b, -2px -2px 5px #41504b;
+}
+.container{
+    display:flex;
+    justify-content: center;
+    justify-content: space-between;
+    /* flex-wrap: wrap;
+    flex-flow: column-reverse; */
+    margin:10px 0px;
+    scroll-behavior: smooth;
+}
+
+.items{
+    /* background-color: rgba(0, 0, 0, 0.952); */
+    color: white;
+    background-color: black;
+    border-radius: 15px;
+    /* margin:4px; */
+    box-shadow:5px 5px 5px #0cff04,-4px -5px 5px #0cff04,inset 1px 1px ,inset -1px -1px ;
+    /* box-shadow: -4px -4px 4px rgba(4, 219, 40, 0.6),
+                 4px 4px 4px rgba(2, 224, 213, 0.904),
+                inset -2px -2px  2px rgba(3, 248, 215, 0.6),
+              inset 2px  2px  2px rgba(45, 219, 2, 0.9); */
+    background: transparent;
+    background:rgba(0, 0, 0,0.9);
+    width: 15vw;
+    height:40vh;
+    cursor: pointer;
+}
+.pop{
+    color: rgb(255, 102, 0);
+    border-radius: 10px;
+    background-color: rgb(0, 0, 0);
+    width:235px;
+    margin:5px;
+    padding: 3px;
+    margin-top: 75px;
+    position: sticky;
+    cursor: pointer;
+    text-shadow: 1px 1px 3px red;
+}
+.pop:hover{
+    color: #ffffff;
+    text-shadow: 1px 1px 2px#41504b;
+}
+.SongName{
+    margin-left: 10px;
+    /* font-weight: lighter; */
+}
+.singername{
+    font-weight: lighter;
+    font: size 1.5rem;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+.container.items i{
+    margin-left: 100px;
+}
+.Cplay{
+    color: rgb(11, 253, 11);
+    opacity: 0;
+    transition: 0.4s ease-in;
+    margin-left: 11vw;
+    margin-top: -15px;
+}
+.items:hover .Cplay{
+    opacity: 1;
+    /* overflow: hidden; */
+    margin-top: -10px;
+} 
+.items:hover{
+    background-color: rgba(0, 0, 0, 0.801);
+}
+#myProgressBar{
+    width: 49vh;   
+    cursor: pointer;
+    margin-left: 6px;
+}
+#gif{
+    /* width: 45px; */
+    /* margin-left: 20vw; */
+    /* margin-top: -10vh; */
+    opacity: 0;
+    /* margin:-5vh 0 0 11vw; */
+    /* position: absolute;
+    margin-left: 1vw;
+    margin-top: -6vh;
+    transition: opacity 1 sec ease-in; */
+}
+.icons i{
+    margin:2px;
+    cursor: pointer;
+    font-size: 3rem;
+    width: 85px;
+    text-align: center;
+    
+}
+#phone{
+    display: none;
+}
+
+.BottomBar{
+    /* margin-top:15.5vh; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    /* width:100vw; */
+    height: 110px;
+    background-color: black;
+    margin-top: -40px;
+    /* top: 90%; */
+    bottom: 0;
+    width: 100vw;
+}
+.Bicon{
+    color: white;
+    margin-top: 10px;
+    cursor: pointer;
+}
+#BottomProgressBar{
+    width:90vw;
+    /* margin-left: 50px; */
+}
+.Bgif{
+    position:absolute;
+    left: 0;
+    margin-left: 15vw;
+    top:70px;
+}
+.Bgif img{
+    opacity: 0;
+    transition: opacity 0.4s ease-in;
+}
+#MasterSongName{
+    color: white;
+    position: absolute;
+    margin-left: 25px;
+    margin-top: -10px;
+    opacity: 0;
+    width: 15vw;
+    transition: 0.4s ease-in;
+}
+.blank{
+    height: 14vh;
+}
+@media only screen and (max-width: 410px) {
+    .container{
+        overflow-y: scroll;
+    }
+    .items{
+        width: 40vw;
+        height: 32vh;
+        margin: 10px;
+    }
+    .img{
+        width: 33vw;
+    }
+    .icon img{
+        width: 40px;
+        margin-left: -15px;
+    }
+    .icon{
+        font-size: 1.2rem;
+    }
+    nav ul li button{
+       width: 5em;
+       margin: -3px;
+       margin-left: -14px;
+    }
+    .sticky ul li form input{
+        width: 4em;
+        margin-right: -8px;
+        height: 25px;
+        margin-top: -5px;
+        border-radius: 20px;
+    }
+    .H{
+        display: none;
+    }
+    .A{
+        display: none;
+    }
+    .SongName{
+        font-size: 1rem;
+    }
+    .singername{
+        font-size: 1rem;
+    }
+    .Cplay{
+        margin-left: 2em;
+    }
+    #MasterSongName{
+        margin-left: 46vw;
+        margin-top: -30px;
+    }
+    .BottomBar{
+        bottom: 0;
+    }
+    }
