@@ -19,6 +19,12 @@ let Songs = [
     {SongName: "Saajna X Aadat",     FilePath:"song10.mp3", CoverPath: "cover10.jpg", SingerName:"Singer : Jalraj"},
     {SongName: "Uska Hi Bana",       FilePath:"song11.mp3", CoverPath: "cover11.jpg", SingerName:"Singer : Jalraj"},
     {SongName: "Zara Zara",          FilePath:"song12.mp3", CoverPath: "cover12.jpg", SingerName:"Singer : Jalraj"},
+    {SongName: "I Like You So Much", FilePath:"song13.mp3", CoverPath: "cover13.jpeg", SingerName:"Singer : Ysabelle "},
+    {SongName: "Saari ki Saari",     FilePath:"song14.mp3", CoverPath: "cover14.jpeg", SingerName:"Singer : Darshan Raval"},
+    {SongName: "Su Kare Che",        FilePath:"song15.mp3", CoverPath: "cover15.jpeg", SingerName:"Singer : Bilz and Kashif"},
+    {SongName: "Afeemi",             FilePath:"song16.mp3", CoverPath: "cover16.jpeg", SingerName:"Singer : Sanah and Jigar"},
+    {SongName: "shinunoga e-wa",     FilePath:"song17.mp3", CoverPath: "cover17.jpeg", SingerName:"Singer : Fujii Kaze"},
+    {SongName: "Meet",               FilePath:"song18.mp3", CoverPath: "cover18.jpeg", SingerName:"Singer : Arijit Singh"},
 ];
 
 SongItems.forEach((e,i)=>{
@@ -51,13 +57,13 @@ audioElement.addEventListener('timeupdate',()=>{
     progress = parseInt((audioElement.currentTime/audioElement.duration)*100);
     // console.log(progress)
     myProgressBar.value = progress;
-    if(progress==100 && SongIndex<12){
+    if(progress==100 && SongIndex<18){
         SongIndex+=1;
         audioElement.src=`song${SongIndex}.mp3`;
         MasterSongName.innerText = Songs[SongIndex-1].SongName;
         audioElement.play();
     }
-    else if(progress==100 && SongIndex==12){
+    else if(progress==100 && SongIndex==18){
         SongIndex=1;
         audioElement.src=`song${SongIndex}.mp3`;
         MasterSongName.innerText = Songs[SongIndex-1].SongName;
@@ -112,7 +118,7 @@ const PlayCards = ()=>{
 PlayCards();
 //Next
 document.getElementById('next').addEventListener('click',()=>{
-    if(SongIndex==12)
+    if(SongIndex==18)
     SongIndex=1;
     // else if(SongIndex==0)SongIndex+=2;
     else SongIndex+=1;
@@ -130,7 +136,7 @@ document.getElementById('next').addEventListener('click',()=>{
 document.getElementById('previous').addEventListener('click',()=>{
     if(SongIndex>1)
     SongIndex-=1;
-    else SongIndex=12;
+    else SongIndex=18;
     audioElement.src=`song${SongIndex}.mp3`;
     audioElement.currentTime=0;
     audioElement.play();
