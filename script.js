@@ -7,12 +7,12 @@ let gif = document.getElementById('Bgif');
 let SongItems = Array.from(document.getElementsByClassName('items'))
 let MasterSongName = document.getElementById('MasterSongName')
 let Songs = [
-    {SongName: "Punjabiyan Di Dhee", FilePath:"song1.mp3", CoverPath: "cover1.jpg", SingerName:"Singer: Guru Randhawa"},
-    {SongName: "Mast Nazro Se",      FilePath:"song2.mp3", CoverPath: "cover2.jpg", SingerName:"Singer: Jubin Nautiyal "},
-    {SongName: "Tu Hi Das De",       FilePath:"song3.mp3", CoverPath: "cover3.jpg", SingerName:"Singer: Simar and Mickey Singh"},
+    {SongName: "Shiv Samarahe ",     FilePath:"song1.mp3", CoverPath: "cover19.jpeg", SingerName:"Singer : Hansraj Raghuvanshi"},
+    {SongName: "Lagi Lagan ",        FilePath:"song2.mp3", CoverPath: "cover20.jpeg", SingerName:"Singer : Hansraj Raghuvanshi"},
+    {SongName: "Radhe Radhe",        FilePath:"song3.mp3", CoverPath: "cover21.jpeg", SingerName:"Singer : Hansraj Raghuvanshi"},
     {SongName: "Har Har Sambhu",     FilePath:"song4.mp3", CoverPath: "cover4.jfif", SingerName:"Singer: Jeetu and Abhilipsa"},
-    {SongName: "Harleys In Hawai",   FilePath:"song5.mp3", CoverPath: "cover5.jpg", SingerName:"Singer : Katy Pery"},
-    {SongName: "Closer",             FilePath:"song6.mp3", CoverPath: "cover6.jpg", SingerName:"Singer : The Chainsmokers"},
+    {SongName: "Mera Bhola hai",     FilePath:"song5.mp3", CoverPath: "cover22.jpeg", SingerName:"Singer : Hansraj Raghuvanshi"},
+    {SongName: "Ram Siya Ram",       FilePath:"song6.mp3", CoverPath: "cover23.jpeg", SingerName:"Singer : Scahet"},
     {SongName: "Mann Mera",          FilePath:"song7.mp3", CoverPath: "cover7.jpg", SingerName:"Singer : Jalraj"},
     {SongName: "To Fir Aao ",        FilePath:"song8.mp3", CoverPath: "cover8.jpg", SingerName:"Singer : Jalraj"},
     {SongName: "Gale Lag Ja",        FilePath:"song9.mp3", CoverPath: "cover9.jpg", SingerName:"Singer : Jalraj"},
@@ -25,6 +25,12 @@ let Songs = [
     {SongName: "Afeemi",             FilePath:"song16.mp3", CoverPath: "cover16.jpeg", SingerName:"Singer : Sanah and Jigar"},
     {SongName: "shinunoga e-wa",     FilePath:"song17.mp3", CoverPath: "cover17.jpeg", SingerName:"Singer : Fujii Kaze"},
     {SongName: "Meet",               FilePath:"song18.mp3", CoverPath: "cover18.jpeg", SingerName:"Singer : Arijit Singh"},
+    {SongName: "Punjabiyan Di Dhee", FilePath:"song19.mp3", CoverPath: "cover1.jpg", SingerName:"Singer: Guru Randhawa"},
+    {SongName: "Mast Nazro Se",      FilePath:"song20.mp3", CoverPath: "cover2.jpg", SingerName:"Singer: Jubin Nautiyal "},
+    {SongName: "Tu Hi Das De",       FilePath:"song21.mp3", CoverPath: "cover3.jpg", SingerName:"Singer: Simar and Mickey Singh"},
+    {SongName: "Harleys In Hawai",   FilePath:"song22.mp3", CoverPath: "cover5.jpg", SingerName:"Singer : Katy Pery"},
+    {SongName: "Closer",             FilePath:"song23.mp3", CoverPath: "cover6.jpg", SingerName:"Singer : The Chainsmokers"},
+    {SongName: "Bepanah Ishq",       FilePath:"song24.mp3", CoverPath: "cover24.jpeg", SingerName:"Singer : Payal & Yasser"},
 ];
 
 SongItems.forEach((e,i)=>{
@@ -55,15 +61,15 @@ MasterPlay.addEventListener('click',()=>{
 audioElement.addEventListener('timeupdate',()=>{
     //update seekbar
     progress = parseInt((audioElement.currentTime/audioElement.duration)*100);
-    // console.log(progress)
+    console.log(progress)
     myProgressBar.value = progress;
-    if(progress==100 && SongIndex<18){
+    if(progress==100 && SongIndex<24){
         SongIndex+=1;
         audioElement.src=`song${SongIndex}.mp3`;
         MasterSongName.innerText = Songs[SongIndex-1].SongName;
         audioElement.play();
     }
-    else if(progress==100 && SongIndex==18){
+    else if(progress==100 && SongIndex==24){
         SongIndex=1;
         audioElement.src=`song${SongIndex}.mp3`;
         MasterSongName.innerText = Songs[SongIndex-1].SongName;
@@ -118,7 +124,7 @@ const PlayCards = ()=>{
 PlayCards();
 //Next
 document.getElementById('next').addEventListener('click',()=>{
-    if(SongIndex==18)
+    if(SongIndex==24)
     SongIndex=1;
     // else if(SongIndex==0)SongIndex+=2;
     else SongIndex+=1;
@@ -136,7 +142,7 @@ document.getElementById('next').addEventListener('click',()=>{
 document.getElementById('previous').addEventListener('click',()=>{
     if(SongIndex>1)
     SongIndex-=1;
-    else SongIndex=18;
+    else SongIndex=24;
     audioElement.src=`song${SongIndex}.mp3`;
     audioElement.currentTime=0;
     audioElement.play();
