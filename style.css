@@ -11,7 +11,8 @@ body{
     margin-top: 11vh;
 }
 .BigC{
-    overflow:scroll;
+    overflow-x:auto;
+    scroll-behavior: smooth;
 }
 nav{
     font-family: 'Ubuntu', sans-serif;
@@ -94,8 +95,8 @@ nav ul li button:hover{
     justify-content: space-between;
     /* flex-wrap: wrap;
     flex-flow: column-reverse; */
-    margin:10px 0px;
-    scroll-behavior: smooth;
+    margin:10px 10px 0px 10px;
+    scroll-behavior:auto;
 }
 
 .items{
@@ -183,9 +184,6 @@ nav ul li button:hover{
     text-align: center;
     
 }
-#phone{
-    display: none;
-}
 
 .BottomBar{
     /* margin-top:15.5vh; */
@@ -194,11 +192,8 @@ nav ul li button:hover{
     align-items: center;
     justify-content: center;
     position: fixed;
-    /* width:100vw; */
     height: 110px;
     background-color: black;
-    margin-top: -40px;
-    /* top: 90%; */
     bottom: 0;
     width: 100vw;
 }
@@ -209,6 +204,7 @@ nav ul li button:hover{
 }
 #BottomProgressBar{
     width:90vw;
+    cursor: pointer;
     /* margin-left: 50px; */
 }
 .Bgif{
@@ -231,11 +227,12 @@ nav ul li button:hover{
     transition: 0.4s ease-in;
 }
 .blank{
-    height: 14vh;
+    height: 19vh;
 }
+
 @media only screen and (max-width: 410px) {
     .container{
-        overflow-y: scroll;
+        overflow-x: auto;
     }
     .items{
         width: 40vw;
@@ -285,5 +282,8 @@ nav ul li button:hover{
     }
     .BottomBar{
         bottom: 0;
+    }
+    .blank{
+        height: 15vh;
     }
     }
