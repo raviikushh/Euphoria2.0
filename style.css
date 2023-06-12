@@ -286,4 +286,7 @@ nav ul li button:hover{
     .blank{
         height: 15vh;
     }
+    .container{
+        margin: 10px 0px 0px 0px;
+    }
     }
