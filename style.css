@@ -273,7 +273,7 @@ nav ul li button:hover{
     transition: 0.4s ease-in;
 }
 .blank{
-    height: 19vh;
+    height: 20vh;
 }
 
 @media only screen and (max-width: 410px) {
