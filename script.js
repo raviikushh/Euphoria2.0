@@ -159,10 +159,10 @@ document.getElementById("moon").addEventListener("click",()=>{
         document.body.classList.toggle("dark-theme")
         let icon = document.getElementById("moon");
         if(document.body.classList.contains("dark-theme")){
-            icon.src="/Extras/sun.png"
+            icon.src="./Extras/sun.png"
         }
         else{
-            icon.src="/Extras/moon.png"
+            icon.src="./Extras/moon.png"
         }
 });
 
